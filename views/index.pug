@@ -2,8 +2,17 @@ doctype html
 html(lang='en')
  head
    title Home Screen
+   script(src="/socket.io/socket.io.js")
+   script var socket=io();
  body
    h1 Welcome to Fishbowl!
    a(href='/room') Start New Game
-
+   form(method='POST' action='/room')
+    .form-group
+      label(for='username') Name:
+      input#name.form-control(type='text', name='username')
+    .form-group
+      label(for='room_code') Room Code:
+      input#room-code.form-control(type='text', name='room_code')
+      input(type='submit' value="Sign In")
  
